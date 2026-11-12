@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pão de Ló Fofinho | Ayumi Sakura Sawao</title>
+  <meta name="description" content="Receita artesanal de Bolo Pão de Ló clássico e aerado pelo método coupé por Ayumi Sakura.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="icon" type="image/png" href="../images/favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #c25975;
+      --primary-light: #fbebee;
+      --primary-dark: #8c364e;
+      --accent: #d4a373;
+      --bg: #faf7f5;
+      --surface: #ffffff;
+      --text-main: #2b2124;
+      --text-muted: #6e6466;
+      --border: #f0e6e4;
+      --shadow-sm: 0 4px 12px rgba(43, 33, 36, 0.05);
+      --shadow-md: 0 10px 30px rgba(43, 33, 36, 0.08);
+      --radius: 20px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    header {
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid var(--border);
+      padding: 1.1rem 2rem;
+    }
+
+    .nav-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      letter-spacing: -0.01em;
+    }
+
+    .brand-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: linear-gradient(145deg, #ffffff 0%, #fff0f4 100%);
+      box-shadow: 0 3px 12px rgba(194, 89, 117, 0.15), inset 0 1px 2px rgba(255, 255, 255, 0.9);
+      border: 1.5px solid rgba(194, 89, 117, 0.25);
+      transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+      flex-shrink: 0;
+      overflow: hidden;
+      padding: 3px;
+    }
+
+    .brand:hover .brand-icon {
+      transform: rotate(15deg) scale(1.1);
+      box-shadow: 0 6px 18px rgba(194, 89, 117, 0.28);
+      border-color: var(--primary);
+    }
+
+    .brand-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.65rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-muted);
+      font-weight: 500;
+      font-size: 1.05rem;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    /* Container Principal */
+    .recipe-page-container {
+      max-width: 960px;
+      margin: 3rem auto 6rem;
+      padding: 0 1.5rem;
+    }
+
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+      color: var(--primary);
+      font-weight: 600;
+      font-size: 0.95rem;
+      margin-bottom: 2rem;
+      transition: transform 0.2s;
+    }
+
+    .back-btn:hover {
+      transform: translateX(-4px);
+    }
+
+    .recipe-hero {
+      background: var(--surface);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 2.5rem;
+    }
+
+    .recipe-hero-img-wrap {
+      width: 100%;
+      height: 420px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .recipe-hero-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .recipe-header-content {
+      padding: 2.5rem;
+    }
+
+    .recipe-badge-large {
+      display: inline-block;
+      background: var(--primary-light);
+      color: var(--primary);
+      padding: 0.35rem 0.9rem;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .recipe-page-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.6rem;
+      color: var(--text-main);
+      margin-bottom: 0.8rem;
+    }
+
+    .recipe-page-desc {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      line-height: 1.7;
+      margin-bottom: 1.8rem;
+    }
+
+    .recipe-specs {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .spec-item {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.95rem;
+      color: var(--text-main);
+      font-weight: 500;
+    }
+
+    .spec-icon {
+      font-size: 1.3rem;
+    }
+
+    /* Conteúdo: Ingredientes e Modo de Preparo */
+    .recipe-content-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 2.5rem;
+      align-items: start;
+    }
+
+    .content-box {
+      background: var(--surface);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      padding: 2.5rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .content-box h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.7rem;
+      color: var(--text-main);
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .ingredients-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+    }
+
+    .ingredients-list li {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 1rem;
+      color: var(--text-main);
+      padding-bottom: 0.6rem;
+      border-bottom: 1px dashed var(--border);
+    }
+
+    .ingredients-list li:last-child {
+      border-bottom: none;
+    }
+
+    .check-bullet {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--primary-light);
+      color: var(--primary);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: bold;
+      flex-shrink: 0;
+    }
+
+    .steps-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .steps-list li {
+      display: flex;
+      gap: 1.2rem;
+      align-items: flex-start;
+      font-size: 1.05rem;
+      color: var(--text-main);
+      line-height: 1.7;
+    }
+
+    .step-number {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.95rem;
+      flex-shrink: 0;
+      margin-top: 0.2rem;
+    }
+
+    .note-box {
+      margin-top: 2rem;
+      background: #fff8f0;
+      border-left: 4px solid var(--accent);
+      padding: 1.2rem 1.5rem;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      color: #7c4a16;
+    }
+
+    .note-box strong {
+      display: block;
+      margin-bottom: 0.3rem;
+      color: #53300a;
+    }
+
+    .glossary-box {
+      margin-top: 1.2rem;
+      padding: 1rem 1.2rem;
+      background: var(--bg);
+      border-radius: 8px;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .glossary-box p {
+      margin-bottom: 0.4rem;
+    }
+
+    .glossary-box p:last-child {
+      margin-bottom: 0;
+    }
+
+    footer {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      padding: 3rem 2rem;
+      text-align: center;
+      margin-top: 5rem;
+    }
+
+    footer p {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 850px) {
+      .recipe-content-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      .recipe-hero-img-wrap {
+        height: 280px;
+      }
+      .recipe-header-content {
+        padding: 1.8rem;
+      }
+      .recipe-page-title {
+        font-size: 2.1rem;
+      }
+      .content-box {
+        padding: 1.8rem;
+      }
+      header {
+        padding: 1rem 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="nav-container">
+      <a href="../index.html" class="brand">
+        <span class="brand-icon" aria-hidden="true">
+          <img src="../images/sakura-icon.png" alt="Ícone Flor de Cerejeira Ayumi Sakura">
+        </span>
+        <span>Ayumi Sakura</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html#receitas">Receitas</a></li>
+        <li><a href="../index.html#momentos">Momentos</a></li>
+        <li><a href="../index.html#sobre">Sobre</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main class="recipe-page-container">
+    <a href="../index.html#receitas" class="back-btn">← Voltar para Receitas</a>
+
+    <article class="recipe-hero">
+      <div class="recipe-hero-img-wrap">
+        <img src="https://images.unsplash.com/photo-1519869325930-281384150729?w=1200&auto=format&fit=crop&q=80" alt="Pão de Ló Fofinho Tradicional">
+      </div>
+      <div class="recipe-header-content">
+        <span class="recipe-badge-large">☁️ Clássico da Confeitaria</span>
+        <h1 class="recipe-page-title">Pão de Ló Fofinho</h1>
+        <p class="recipe-page-desc">
+          Estrutura aerada, delicada e fofa como nuvem. A base indispensável para receber caldas aromáticas, recheios refinados e montar bolos de festa inesquecíveis.
+        </p>
+
+        <div class="recipe-specs">
+          <div class="spec-item">
+            <span class="spec-icon">⏱️</span>
+            <div>
+              <strong>Tempo de Forno:</strong>
+              <div>40 a 45 min (180 ºC)</div>
+            </div>
+          </div>
+          <div class="spec-item">
+            <span class="spec-icon">🍰</span>
+            <div>
+              <strong>Rendimento:</strong>
+              <div>Bolo de 20 a 24 cm</div>
+            </div>
+          </div>
+          <div class="spec-item">
+            <span class="spec-icon">🥄</span>
+            <div>
+              <strong>Técnica:</strong>
+              <div>Método Coupé (Sem fermento)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <div class="recipe-content-grid">
+      <!-- Ingredientes -->
+      <section class="content-box">
+        <h2>🥣 Ingredientes</h2>
+        <ul class="ingredients-list">
+          <li><span class="check-bullet">✓</span> 8 ovos frescos</li>
+          <li><span class="check-bullet">✓</span> 2 xícaras (chá) de farinha de trigo (peneirada)</li>
+          <li><span class="check-bullet">✓</span> 1 e 1/2 xícara (chá) de açúcar (peneirado)</li>
+          <li><span class="check-bullet">✓</span> 1 colher (sopa) de essência de baunilha (opcional)</li>
+        </ul>
+      </section>
+
+      <!-- Modo de Preparo -->
+      <section class="content-box">
+        <h2>👩‍🍳 Modo de Preparo</h2>
+        <ol class="steps-list">
+          <li>
+            <span class="step-number">1</span>
+            <div>Peneire o açúcar e a farinha de trigo separadamente e reserve.</div>
+          </li>
+          <li>
+            <span class="step-number">2</span>
+            <div>Em uma batedeira, bata os <strong>8 ovos</strong> por cerca de <strong>5 minutos</strong> em velocidade alta até dobrarem de volume e formarem um creme fofo e claro.</div>
+          </li>
+          <li>
+            <span class="step-number">3</span>
+            <div>Diminua a velocidade da batedeira e adicione o açúcar peneirado aos poucos.</div>
+          </li>
+          <li>
+            <span class="step-number">4</span>
+            <div>Adicione a essência de baunilha, aumente a velocidade e bata por mais <strong>10 minutos</strong>. Reserve.</div>
+          </li>
+          <li>
+            <span class="step-number">5</span>
+            <div>Acrescente a farinha de trigo peneirada aos poucos, mexendo a massa com um <em>fouet</em> de forma muito delicada, pelo <strong>método coupé</strong> (movimentos de baixo para cima).</div>
+          </li>
+          <li>
+            <span class="step-number">6</span>
+            <div>Unte o fundo da assadeira com manteiga e forre com papel manteiga (apenas no fundo, deixando as laterais sem untar para o bolo subir reto).</div>
+          </li>
+          <li>
+            <span class="step-number">7</span>
+            <div>Despeje a massa delicadamente na assadeira e leve ao forno preaquecido a <strong>180 ºC</strong> por cerca de <strong>40 a 45 minutos</strong>.</div>
+          </li>
+        </ol>
+
+        <div class="note-box">
+          <strong>💡 Dica de Ouro de Ayumi Sakura:</strong>
+          Essa massa não leva fermento químico! O ar incorporado nos ovos bem batidos age como fermento natural, fazendo o bolo crescer de maneira uniforme, macia e incrivelmente leve.
+        </div>
+
+        <div class="glossary-box">
+          <p><strong>📖 Método coupé:</strong> Movimento suave e contínuo de baixo para cima com a espátula ou fouet para envolver a farinha sem perder o ar das claras em neve.</p>
+          <p><strong>🥣 Fouet:</strong> Batedor manual de arame que garante mistura leve e homogênea.</p>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2026 Ayumi Sakura Sawao • Feito com ❤️ e publicado via GitHub Pages</p>
+  </footer>
+
+</body>
+</html>

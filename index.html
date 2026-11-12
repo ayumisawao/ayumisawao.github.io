@@ -283,15 +283,18 @@
       overflow: hidden;
       border: 1px solid var(--border);
       box-shadow: var(--shadow-sm);
-      transition: all 0.3s ease;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
       display: flex;
       flex-direction: column;
+      text-decoration: none;
+      color: inherit;
+      cursor: pointer;
     }
 
     .recipe-card:hover {
-      transform: translateY(-6px);
+      transform: translateY(-8px);
       box-shadow: var(--shadow-hover);
-      border-color: rgba(194, 89, 117, 0.3);
+      border-color: rgba(194, 89, 117, 0.35);
     }
 
     .recipe-img-wrap {
@@ -699,7 +702,7 @@
 
       <div class="recipes-grid">
         <!-- Card 1 -->
-        <article class="recipe-card">
+        <a href="receitas/bolo-de-chocolate.html" class="recipe-card">
           <div class="recipe-img-wrap">
             <img class="recipe-img" src="images/bolo-destaque.jpg" alt="Bolo de Chocolate Caseiro" onerror="this.src='https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=800&auto=format&fit=crop&q=80'">
             <span class="recipe-badge">🍫 Favorito</span>
@@ -709,13 +712,13 @@
             <p class="recipe-desc">Massa úmida, macia e muito saborosa. Perfeito para qualquer café da tarde ou comemoração em família.</p>
             <div class="recipe-meta">
               <span>⏱️ 45 minutos</span>
-              <a class="recipe-btn" href="https://github.com/ayumisawao/receitas/blob/master/Bolos/Bolo_de_chocolate.md" target="_blank">Acessar Receita →</a>
+              <span class="recipe-btn">Ver Receita Completa →</span>
             </div>
           </div>
-        </article>
+        </a>
 
         <!-- Card 2 -->
-        <article class="recipe-card">
+        <a href="receitas/pao-de-lo.html" class="recipe-card">
           <div class="recipe-img-wrap">
             <img class="recipe-img" src="https://images.unsplash.com/photo-1519869325930-281384150729?w=800&auto=format&fit=crop&q=80" alt="Pão de Ló">
             <span class="recipe-badge">☁️ Clássico</span>
@@ -725,13 +728,13 @@
             <p class="recipe-desc">Estrutura aerada e leve, a base ideal e versátil para recheios refinados, caldas e bolos de aniversário.</p>
             <div class="recipe-meta">
               <span>⏱️ 40 minutos</span>
-              <a class="recipe-btn" href="https://github.com/ayumisawao/receitas/blob/master/Bolos/Pao%20_de_lo.md" target="_blank">Acessar Receita →</a>
+              <span class="recipe-btn">Ver Receita Completa →</span>
             </div>
           </div>
-        </article>
+        </a>
 
         <!-- Card 3 -->
-        <article class="recipe-card">
+        <article class="recipe-card" style="cursor: default;">
           <div class="recipe-img-wrap">
             <img class="recipe-img" src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=800&auto=format&fit=crop&q=80" alt="Novidades">
             <span class="recipe-badge">✨ Em Breve</span>
@@ -741,7 +744,7 @@
             <p class="recipe-desc">Novas receitas de massas e preparos salgados já estão no forno e serão publicadas em breve no repositório.</p>
             <div class="recipe-meta">
               <span>🥖 Novidade</span>
-              <a class="recipe-btn" href="https://github.com/ayumisawao/receitas" target="_blank">Seguir Caderno →</a>
+              <span class="recipe-btn" style="color: var(--text-muted);">Em breve →</span>
             </div>
           </div>
         </article>

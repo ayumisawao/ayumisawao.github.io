@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bolo de Chocolate | Ayumi Sakura Sawao</title>
+  <meta name="description" content="Receita passo a passo de Bolo de Chocolate caseiro, úmido e muito saboroso por Ayumi Sakura.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="icon" type="image/png" href="../images/favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #c25975;
+      --primary-light: #fbebee;
+      --primary-dark: #8c364e;
+      --accent: #d4a373;
+      --bg: #faf7f5;
+      --surface: #ffffff;
+      --text-main: #2b2124;
+      --text-muted: #6e6466;
+      --border: #f0e6e4;
+      --shadow-sm: 0 4px 12px rgba(43, 33, 36, 0.05);
+      --shadow-md: 0 10px 30px rgba(43, 33, 36, 0.08);
+      --radius: 20px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    header {
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid var(--border);
+      padding: 1.1rem 2rem;
+    }
+
+    .nav-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      letter-spacing: -0.01em;
+    }
+
+    .brand-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: linear-gradient(145deg, #ffffff 0%, #fff0f4 100%);
+      box-shadow: 0 3px 12px rgba(194, 89, 117, 0.15), inset 0 1px 2px rgba(255, 255, 255, 0.9);
+      border: 1.5px solid rgba(194, 89, 117, 0.25);
+      transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+      flex-shrink: 0;
+      overflow: hidden;
+      padding: 3px;
+    }
+
+    .brand:hover .brand-icon {
+      transform: rotate(15deg) scale(1.1);
+      box-shadow: 0 6px 18px rgba(194, 89, 117, 0.28);
+      border-color: var(--primary);
+    }
+
+    .brand-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.65rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-muted);
+      font-weight: 500;
+      font-size: 1.05rem;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    /* Container Principal */
+    .recipe-page-container {
+      max-width: 960px;
+      margin: 3rem auto 6rem;
+      padding: 0 1.5rem;
+    }
+
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+      color: var(--primary);
+      font-weight: 600;
+      font-size: 0.95rem;
+      margin-bottom: 2rem;
+      transition: transform 0.2s;
+    }
+
+    .back-btn:hover {
+      transform: translateX(-4px);
+    }
+
+    .recipe-hero {
+      background: var(--surface);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 2.5rem;
+    }
+
+    .recipe-hero-img-wrap {
+      width: 100%;
+      height: 420px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .recipe-hero-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .recipe-header-content {
+      padding: 2.5rem;
+    }
+
+    .recipe-badge-large {
+      display: inline-block;
+      background: var(--primary-light);
+      color: var(--primary);
+      padding: 0.35rem 0.9rem;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .recipe-page-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.6rem;
+      color: var(--text-main);
+      margin-bottom: 0.8rem;
+    }
+
+    .recipe-page-desc {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      line-height: 1.7;
+      margin-bottom: 1.8rem;
+    }
+
+    .recipe-specs {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .spec-item {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.95rem;
+      color: var(--text-main);
+      font-weight: 500;
+    }
+
+    .spec-icon {
+      font-size: 1.3rem;
+    }
+
+    /* Conteúdo: Ingredientes e Modo de Preparo */
+    .recipe-content-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 2.5rem;
+      align-items: start;
+    }
+
+    .content-box {
+      background: var(--surface);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      padding: 2.5rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .content-box h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.7rem;
+      color: var(--text-main);
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .ingredients-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+    }
+
+    .ingredients-list li {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 1rem;
+      color: var(--text-main);
+      padding-bottom: 0.6rem;
+      border-bottom: 1px dashed var(--border);
+    }
+
+    .ingredients-list li:last-child {
+      border-bottom: none;
+    }
+
+    .check-bullet {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--primary-light);
+      color: var(--primary);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: bold;
+      flex-shrink: 0;
+    }
+
+    .steps-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .steps-list li {
+      display: flex;
+      gap: 1.2rem;
+      align-items: flex-start;
+      font-size: 1.05rem;
+      color: var(--text-main);
+      line-height: 1.7;
+    }
+
+    .step-number {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.95rem;
+      flex-shrink: 0;
+      margin-top: 0.2rem;
+    }
+
+    .note-box {
+      margin-top: 2rem;
+      background: #fff8f0;
+      border-left: 4px solid var(--accent);
+      padding: 1.2rem 1.5rem;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      color: #7c4a16;
+    }
+
+    .note-box strong {
+      display: block;
+      margin-bottom: 0.3rem;
+      color: #53300a;
+    }
+
+    footer {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      padding: 3rem 2rem;
+      text-align: center;
+      margin-top: 5rem;
+    }
+
+    footer p {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 850px) {
+      .recipe-content-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      .recipe-hero-img-wrap {
+        height: 280px;
+      }
+      .recipe-header-content {
+        padding: 1.8rem;
+      }
+      .recipe-page-title {
+        font-size: 2.1rem;
+      }
+      .content-box {
+        padding: 1.8rem;
+      }
+      header {
+        padding: 1rem 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="nav-container">
+      <a href="../index.html" class="brand">
+        <span class="brand-icon" aria-hidden="true">
+          <img src="../images/sakura-icon.png" alt="Ícone Flor de Cerejeira Ayumi Sakura">
+        </span>
+        <span>Ayumi Sakura</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html#receitas">Receitas</a></li>
+        <li><a href="../index.html#momentos">Momentos</a></li>
+        <li><a href="../index.html#sobre">Sobre</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main class="recipe-page-container">
+    <a href="../index.html#receitas" class="back-btn">← Voltar para Receitas</a>
+
+    <article class="recipe-hero">
+      <div class="recipe-hero-img-wrap">
+        <img src="../images/bolo-destaque.jpg" alt="Bolo de Chocolate Caseiro">
+      </div>
+      <div class="recipe-header-content">
+        <span class="recipe-badge-large">🍫 Favorito dos Clientes</span>
+        <h1 class="recipe-page-title">Bolo de Chocolate</h1>
+        <p class="recipe-page-desc">
+          Massa extremamente úmida, macia e equilibrada com chocolate em pó. A receita perfeita para um café da tarde especial ou comemorações afetivas com família e amigos.
+        </p>
+
+        <div class="recipe-specs">
+          <div class="spec-item">
+            <span class="spec-icon">⏱️</span>
+            <div>
+              <strong>Tempo de Forno:</strong>
+              <div>30 a 40 min (180 ºC)</div>
+            </div>
+          </div>
+          <div class="spec-item">
+            <span class="spec-icon">🍰</span>
+            <div>
+              <strong>Rendimento:</strong>
+              <div>1 bolo médio / grande</div>
+            </div>
+          </div>
+          <div class="spec-item">
+            <span class="spec-icon">🥄</span>
+            <div>
+              <strong>Dificuldade:</strong>
+              <div>Fácil (Liquidificador)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <div class="recipe-content-grid">
+      <!-- Ingredientes -->
+      <section class="content-box">
+        <h2>🥣 Ingredientes</h2>
+        <ul class="ingredients-list">
+          <li><span class="check-bullet">✓</span> 4 ovos</li>
+          <li><span class="check-bullet">✓</span> 4 colheres (sopa) de chocolate em pó</li>
+          <li><span class="check-bullet">✓</span> 2 colheres (sopa) de manteiga</li>
+          <li><span class="check-bullet">✓</span> 3 xícaras (chá) de farinha de trigo</li>
+          <li><span class="check-bullet">✓</span> 2 xícaras (chá) de açúcar</li>
+          <li><span class="check-bullet">✓</span> 2 colheres (sopa) de fermento em pó</li>
+          <li><span class="check-bullet">✓</span> 1 xícara (chá) de leite</li>
+        </ul>
+      </section>
+
+      <!-- Modo de Preparo -->
+      <section class="content-box">
+        <h2>👩‍🍳 Modo de Preparo</h2>
+        <ol class="steps-list">
+          <li>
+            <span class="step-number">1</span>
+            <div>Em um liquidificador, adicione todos os ingredientes (exceto o fermento) e bata em velocidade média por <strong>5 minutos</strong> até obter uma mistura homogênea.</div>
+          </li>
+          <li>
+            <span class="step-number">2</span>
+            <div>Adicione o fermento em pó por último e misture com uma espátula delicadamente, apenas para incorporar.</div>
+          </li>
+          <li>
+            <span class="step-number">3</span>
+            <div>Unte e enfarinhe uma forma de bolo alta, despejando a massa com cuidado.</div>
+          </li>
+          <li>
+            <span class="step-number">4</span>
+            <div>Asse em forno preaquecido a <strong>180 ºC</strong> por cerca de <strong>30 a 40 minutos</strong>, até que espetando um palito este saia limpo.</div>
+          </li>
+        </ol>
+
+        <div class="note-box">
+          <strong>💡 Dica de Ouro de Ayumi Sakura:</strong>
+          Não se esqueça de usar uma forma alta! Essa massa cresce bastante, garantindo uma aeração perfeita e fofinha.
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2026 Ayumi Sakura Sawao • Feito com ❤️ e publicado via GitHub Pages</p>
+  </footer>
+
+</body>
+</html>
