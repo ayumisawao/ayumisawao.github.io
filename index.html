@@ -7,6 +7,7 @@
   <meta name="description" content="Portfólio e caderno de receitas doces e bolos especiais de Ayumi Sakura Sawao.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="icon" type="image/png" href="images/favicon.png">
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
   <style>
     :root {
@@ -73,26 +74,29 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 40px;
-      height: 40px;
+      width: 44px;
+      height: 44px;
       border-radius: 50%;
-      background: linear-gradient(145deg, #fff5f7 0%, #fde7ed 100%);
-      color: var(--primary);
-      box-shadow: 0 3px 10px rgba(194, 89, 117, 0.12), inset 0 1px 2px rgba(255, 255, 255, 0.8);
-      border: 1px solid rgba(194, 89, 117, 0.22);
+      background: linear-gradient(145deg, #ffffff 0%, #fff0f4 100%);
+      box-shadow: 0 3px 12px rgba(194, 89, 117, 0.15), inset 0 1px 2px rgba(255, 255, 255, 0.9);
+      border: 1.5px solid rgba(194, 89, 117, 0.25);
       transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
       flex-shrink: 0;
+      overflow: hidden;
+      padding: 3px;
     }
 
     .brand:hover .brand-icon {
-      transform: rotate(20deg) scale(1.08);
-      box-shadow: 0 6px 16px rgba(194, 89, 117, 0.22);
+      transform: rotate(15deg) scale(1.1);
+      box-shadow: 0 6px 18px rgba(194, 89, 117, 0.28);
       border-color: var(--primary);
     }
 
-    .brand-icon svg {
-      width: 26px;
-      height: 26px;
+    .brand-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
     }
 
     .nav-links {
@@ -622,63 +626,7 @@
     <div class="nav-container">
       <a href="#" class="brand">
         <span class="brand-icon" aria-hidden="true">
-          <!-- Logo Botânica de Cerejeira (Sakura Blossom Emblem) refinada, detalhada e delicada -->
-          <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <linearGradient id="sakuraGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#df6b88"/>
-                <stop offset="100%" stop-color="#b64361"/>
-              </linearGradient>
-              <linearGradient id="petalGlow" x1="50%" y1="100%" x2="50%" y2="0%">
-                <stop offset="0%" stop-color="#fdf0f3" stop-opacity="0.8"/>
-                <stop offset="100%" stop-color="#f5c2cd" stop-opacity="0.25"/>
-              </linearGradient>
-            </defs>
-
-            <!-- 5 Pétalas clássicas de cerejeira com chanfro característico e preenchimento suave -->
-            <!-- Pétala Superior (0°) -->
-            <path d="M50 49 C46 36 34 26 44 14 C47 10 49 14 50 16 C51 14 53 10 56 14 C66 26 54 36 50 49Z" 
-                  fill="url(#petalGlow)" stroke="url(#sakuraGrad)" stroke-width="2.2" stroke-linejoin="round"/>
-            <!-- Pétala Direita Superior (72°) -->
-            <path d="M50 50 C58 40 73 38 80 49 C83 54 79 55 77 55 C79 57 82 60 77 64 C64 70 57 58 50 50Z" 
-                  fill="url(#petalGlow)" stroke="url(#sakuraGrad)" stroke-width="2.2" stroke-linejoin="round"/>
-            <!-- Pétala Direita Inferior (144°) -->
-            <path d="M50 51 C57 58 66 71 58 83 C54 87 52 84 51 82 C50 85 46 88 43 83 C38 71 45 60 50 51Z" 
-                  fill="url(#petalGlow)" stroke="url(#sakuraGrad)" stroke-width="2.2" stroke-linejoin="round"/>
-            <!-- Pétala Esquerda Inferior (216°) -->
-            <path d="M49 51 C43 60 30 70 23 60 C19 55 23 54 25 53 C22 51 20 47 25 43 C37 36 43 47 49 51Z" 
-                  fill="url(#petalGlow)" stroke="url(#sakuraGrad)" stroke-width="2.2" stroke-linejoin="round"/>
-            <!-- Pétala Esquerda Superior (288°) -->
-            <path d="M49 49 C42 42 28 32 35 21 C39 16 42 19 43 21 C43 18 47 15 50 19 C55 31 47 42 49 49Z" 
-                  fill="url(#petalGlow)" stroke="url(#sakuraGrad)" stroke-width="2.2" stroke-linejoin="round"/>
-
-            <!-- Nervuras delicadas nas pétalas -->
-            <path d="M50 42 C50 32 50 24 50 18" stroke="url(#sakuraGrad)" stroke-width="1.2" stroke-linecap="round" opacity="0.6"/>
-            <path d="M56 46 C64 43 70 47 75 52" stroke="url(#sakuraGrad)" stroke-width="1.2" stroke-linecap="round" opacity="0.6"/>
-            <path d="M54 55 C54 63 53 71 50 78" stroke="url(#sakuraGrad)" stroke-width="1.2" stroke-linecap="round" opacity="0.6"/>
-            <path d="M44 54 C37 57 30 57 26 52" stroke="url(#sakuraGrad)" stroke-width="1.2" stroke-linecap="round" opacity="0.6"/>
-            <path d="M45 45 C39 39 37 32 37 24" stroke="url(#sakuraGrad)" stroke-width="1.2" stroke-linecap="round" opacity="0.6"/>
-
-            <!-- Estames / Centro floral refinado (Pistilos dourados/rosé delicados) -->
-            <line x1="50" y1="50" x2="50" y2="40" stroke="#c25975" stroke-width="1.5" stroke-linecap="round"/>
-            <circle cx="50" cy="39" r="1.5" fill="#d4a373"/>
-
-            <line x1="50" y1="50" x2="59" y2="44" stroke="#c25975" stroke-width="1.5" stroke-linecap="round"/>
-            <circle cx="60" cy="43.5" r="1.5" fill="#d4a373"/>
-
-            <line x1="50" y1="50" x2="56" y2="58" stroke="#c25975" stroke-width="1.5" stroke-linecap="round"/>
-            <circle cx="57" cy="59" r="1.5" fill="#d4a373"/>
-
-            <line x1="50" y1="50" x2="43" y2="57" stroke="#c25975" stroke-width="1.5" stroke-linecap="round"/>
-            <circle cx="42" cy="58" r="1.5" fill="#d4a373"/>
-
-            <line x1="50" y1="50" x2="42" y2="44" stroke="#c25975" stroke-width="1.5" stroke-linecap="round"/>
-            <circle cx="41" cy="43.5" r="1.5" fill="#d4a373"/>
-
-            <!-- Miolo central com brilho refinado -->
-            <circle cx="50" cy="50" r="3.2" fill="url(#sakuraGrad)"/>
-            <circle cx="50" cy="50" r="1.2" fill="#fff5f7"/>
-          </svg>
+          <img src="images/sakura-icon.png" alt="Ícone Flor de Cerejeira Ayumi Sakura">
         </span>
         <span>Ayumi Sakura</span>
       </a>
