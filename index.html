@@ -382,6 +382,146 @@
       font-weight: 500;
     }
 
+    /* Carousel Section */
+    .carousel-section {
+      max-width: 1100px;
+      margin: 4rem auto;
+      padding: 0 2rem;
+    }
+
+    .carousel-container {
+      position: relative;
+      background: var(--surface);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+    }
+
+    .carousel-track-wrapper {
+      overflow: hidden;
+      width: 100%;
+    }
+
+    .carousel-track {
+      display: flex;
+      transition: transform 0.45s cubic-bezier(0.25, 1, 0.5, 1);
+      width: 100%;
+    }
+
+    .carousel-slide {
+      min-width: 100%;
+      height: 480px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #1a1617;
+    }
+
+    .carousel-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .carousel-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 2.5rem 2rem 1.5rem;
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(20, 15, 17, 0.85) 100%);
+      color: #ffffff;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+
+    .carousel-caption h4 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+      color: #ffffff;
+    }
+
+    .carousel-caption p {
+      font-size: 0.9rem;
+      color: #f0e6e4;
+    }
+
+    .carousel-tag {
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      padding: 0.3rem 0.8rem;
+      border-radius: 100px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+    }
+
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255, 255, 255, 0.85);
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      color: var(--text-main);
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      cursor: pointer;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.2);
+      transition: all 0.2s ease;
+      z-index: 10;
+    }
+
+    .carousel-btn:hover {
+      background: #ffffff;
+      transform: translateY(-50%) scale(1.1);
+    }
+
+    .carousel-btn.prev {
+      left: 1.25rem;
+    }
+
+    .carousel-btn.next {
+      right: 1.25rem;
+    }
+
+    .carousel-dots {
+      position: absolute;
+      bottom: 1rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 0.5rem;
+      z-index: 10;
+    }
+
+    .carousel-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.4);
+      border: none;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      padding: 0;
+    }
+
+    .carousel-dot.active {
+      background: #ffffff;
+      width: 24px;
+      border-radius: 10px;
+    }
+
     /* Footer */
     footer {
       background: var(--surface);
@@ -431,6 +571,7 @@
       </a>
       <ul class="nav-links">
         <li><a href="#receitas">Receitas</a></li>
+        <li><a href="#momentos">Momentos</a></li>
         <li><a href="#sobre">Sobre</a></li>
         <li><a href="https://github.com/ayumisawao/receitas" target="_blank">GitHub</a></li>
       </ul>
@@ -521,6 +662,115 @@
       </div>
     </section>
 
+    <!-- Momentos & Inspirações (Carrossel) -->
+    <section id="momentos" class="carousel-section">
+      <div class="section-header">
+        <h2>Momentos & Inspirações</h2>
+        <p>Registros fotográficos de passeios, detalhes e cenários que inspiram a cozinha</p>
+      </div>
+
+      <div class="carousel-container" aria-roledescription="carousel">
+        <button class="carousel-btn prev" aria-label="Foto anterior">&#10094;</button>
+        <button class="carousel-btn next" aria-label="Próxima foto">&#10095;</button>
+
+        <div class="carousel-track-wrapper">
+          <div class="carousel-track" id="carouselTrack">
+            
+            <div class="carousel-slide">
+              <img src="images/IMG_20261021_081607.jpg" alt="Café da Manhã & Manhã Serena" loading="lazy">
+              <div class="carousel-caption">
+                <div>
+                  <h4>Manhã Serena</h4>
+                  <p>A calma do início do dia trazendo inspiração para novas criações.</p>
+                </div>
+                <span class="carousel-tag">21 Out</span>
+              </div>
+            </div>
+
+            <div class="carousel-slide">
+              <img src="images/IMG_20261021_160054.jpg" alt="Tarde de Luz Quente" loading="lazy">
+              <div class="carousel-caption">
+                <div>
+                  <h4>Cores de Outono</h4>
+                  <p>Luz solar suave e tons aconchegantes ao entardecer.</p>
+                </div>
+                <span class="carousel-tag">21 Out</span>
+              </div>
+            </div>
+
+            <div class="carousel-slide">
+              <img src="images/IMG_20261022_160000.jpg" alt="Texturas Naturais" loading="lazy">
+              <div class="carousel-caption">
+                <div>
+                  <h4>Harmonia & Natureza</h4>
+                  <p>Linhas orgânicas e contrastes do ambiente ao ar livre.</p>
+                </div>
+                <span class="carousel-tag">22 Out</span>
+              </div>
+            </div>
+
+            <div class="carousel-slide">
+              <img src="images/IMG_20261024_161510.jpg" alt="Paisagem e Luz Solar" loading="lazy">
+              <div class="carousel-caption">
+                <div>
+                  <h4>Pôr do Sol Dourado</h4>
+                  <p>O brilho dourado aquecendo o cenário da tarde.</p>
+                </div>
+                <span class="carousel-tag">24 Out</span>
+              </div>
+            </div>
+
+            <div class="carousel-slide">
+              <img src="images/IMG_20261028_160923.jpg" alt="Reflexos & Serenidade" loading="lazy">
+              <div class="carousel-caption">
+                <div>
+                  <h4>Caminhos e Silêncio</h4>
+                  <p>Um instante de contemplação e ar puro.</p>
+                </div>
+                <span class="carousel-tag">28 Out</span>
+              </div>
+            </div>
+
+            <div class="carousel-slide">
+              <img src="images/IMG_20261028_163215.jpg" alt="Geometria e Natureza" loading="lazy">
+              <div class="carousel-caption">
+                <div>
+                  <h4>Perspectiva Viva</h4>
+                  <p>Equilíbrio entre paisagem e detalhes minuciosos.</p>
+                </div>
+                <span class="carousel-tag">28 Out</span>
+              </div>
+            </div>
+
+            <div class="carousel-slide">
+              <img src="images/IMG_20261109_151614.jpg" alt="Cores e Frescor" loading="lazy">
+              <div class="carousel-caption">
+                <div>
+                  <h4>Frescor de Novembro</h4>
+                  <p>Vivacidade nas cores e claridade que renovam a energia.</p>
+                </div>
+                <span class="carousel-tag">09 Nov</span>
+              </div>
+            </div>
+
+            <div class="carousel-slide">
+              <img src="images/IMG_20260921_151439_427.jpg" alt="Composição Retrô" loading="lazy">
+              <div class="carousel-caption">
+                <div>
+                  <h4>Memórias e Detalhes</h4>
+                  <p>Registros afetivos capturados no tempo.</p>
+                </div>
+                <span class="carousel-tag">21 Set</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="carousel-dots" id="carouselDots"></div>
+      </div>
+    </section>
+
     <!-- About Section -->
     <section id="sobre" class="section">
       <div class="about-card">
@@ -546,6 +796,96 @@
   <footer>
     <p>© 2026 Ayumi Sakura Sawao • Feito com ❤️ e publicado via GitHub Pages</p>
   </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const track = document.getElementById('carouselTrack');
+      const slides = Array.from(track.children);
+      const nextBtn = document.querySelector('.carousel-btn.next');
+      const prevBtn = document.querySelector('.carousel-btn.prev');
+      const dotsContainer = document.getElementById('carouselDots');
+
+      let currentIndex = 0;
+      let autoPlayTimer;
+
+      // Criar dots
+      slides.forEach((_, idx) => {
+        const dot = document.createElement('button');
+        dot.classList.add('carousel-dot');
+        if (idx === 0) dot.classList.add('active');
+        dot.setAttribute('aria-label', `Ir para foto ${idx + 1}`);
+        dot.addEventListener('click', () => {
+          goToSlide(idx);
+          resetAutoPlay();
+        });
+        dotsContainer.appendChild(dot);
+      });
+
+      const dots = Array.from(dotsContainer.children);
+
+      function goToSlide(index) {
+        currentIndex = (index + slides.length) % slides.length;
+        track.style.transform = `translateX(-${currentIndex * 100}%)`;
+        dots.forEach((dot, idx) => {
+          dot.classList.toggle('active', idx === currentIndex);
+        });
+      }
+
+      function nextSlide() {
+        goToSlide(currentIndex + 1);
+      }
+
+      function prevSlide() {
+        goToSlide(currentIndex - 1);
+      }
+
+      nextBtn.addEventListener('click', () => {
+        nextSlide();
+        resetAutoPlay();
+      });
+
+      prevBtn.addEventListener('click', () => {
+        prevSlide();
+        resetAutoPlay();
+      });
+
+      // Transição automática a cada 5 segundos
+      function startAutoPlay() {
+        autoPlayTimer = setInterval(nextSlide, 5000);
+      }
+
+      function resetAutoPlay() {
+        clearInterval(autoPlayTimer);
+        startAutoPlay();
+      }
+
+      // Pausar autoPlay quando o mouse estiver em cima
+      const container = document.querySelector('.carousel-container');
+      container.addEventListener('mouseenter', () => clearInterval(autoPlayTimer));
+      container.addEventListener('mouseleave', startAutoPlay);
+
+      // Suporte a toque (swipe mobile)
+      let touchStartX = 0;
+      let touchEndX = 0;
+
+      container.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+      }, { passive: true });
+
+      container.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        if (touchStartX - touchEndX > 50) {
+          nextSlide();
+          resetAutoPlay();
+        } else if (touchEndX - touchStartX > 50) {
+          prevSlide();
+          resetAutoPlay();
+        }
+      }, { passive: true });
+
+      startAutoPlay();
+    });
+  </script>
 
 </body>
 </html>
