@@ -540,9 +540,10 @@
       .hero {
         grid-template-columns: 1fr;
         text-align: center;
+        margin-top: 2rem;
       }
       .hero-title {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
       }
       .hero-subtitle {
         margin: 0 auto 2rem;
@@ -550,14 +551,40 @@
       .hero-actions {
         justify-content: center;
       }
+      .hero-img-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+      }
+      .hero-img {
+        height: auto;
+        max-height: 380px;
+        aspect-ratio: 16 / 9;
+      }
       .floating-card {
-        left: 50%;
-        transform: translateX(-50%);
-        bottom: -15px;
+        position: static;
+        transform: none;
+        width: 100%;
+        max-width: 340px;
+        justify-content: center;
+        box-shadow: var(--shadow-sm);
+        padding: 0.8rem 1.2rem;
       }
       .about-card {
         grid-template-columns: 1fr;
         padding: 2rem;
+      }
+      .carousel-slide {
+        height: 320px;
+      }
+      .carousel-caption h4 {
+        font-size: 1.1rem;
+      }
+      .carousel-btn {
+        width: 38px;
+        height: 38px;
+        font-size: 1.1rem;
       }
     }
   </style>
